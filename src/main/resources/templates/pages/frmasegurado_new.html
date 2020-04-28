@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantillas/template :: head">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <header th:replace="plantillas/template :: header"> </header>
+
+        <br/>
+        <div class="container">
+
+            <div class="card bg-light">
+                <div class="card-header bg-dark text-white" th:text="${titulo}"></div>
+                <div class="card-body">
+
+                    <form th:action="@{/asegurados/save}" th:object="${asegurado}" method="post">
+
+
+                        <div class="form-group row">
+                            <input type="hidden" th:field="*{id}"> <label
+                                class="col-md-2 text-right" for="nombres">Nombres</label> 
+                                <input
+                                type="text" th:field="*{nombres}" id="nombres"
+                                class="form-control form-control-sm col-md-6">
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2 text-right" for="apellidos">Apellidos</label>
+                            <input type="text" th:field="*{apellidos}"
+                                   class="form-control form-control-sm col-md-6" id="apellidos">
+                        </div>
+
+                        <div class="form-group row">
+                            <label class="col-md-2 text-right" for="telefono">Telefono</label>
+                            <input type="text" th:field="*{telefono}"
+                                   class="form-control form-control-sm col-md-6" id="telefono"
+                                   aria-describedby="nombresHelp">
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-md-2 text-right" for="correo">Correo</label> 
+                            <input
+                                type="email" th:field="*{email}"
+                                class="form-control form-control-sm col-md-6"
+                                id="exampleInputEmail">
+                        </div>
+
+
+                        <div class="form-group row">
+                            <div class='input-group date' id='datetimepicker1'>
+                                <label class="col-md-2 text-right" for="fecingreso">Fec. Ingreso</label> 
+
+                                <input
+                                    type="text" 
+                                    th:field="*{fec_ingreso}"
+                                    class="form-control form-control-sm col-md-6"/>
+
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label class="col-md-2 text-right" for="sucursal">Sucursal:</label> <select
+                                th:field="*{suc}"
+                                class="form-control form-control-sm col-md-6" id="sucursal">
+                                <option th:each="s:${suc}" th:value="${s.id}"
+                                        th:text="${s.descripcion}" />
+                            </select>
+                        </div>
+
+
+                        <input type="submit" class="btn btn-primary btn-sm" value="Guardar" />
+                    </form>
+
+
+                </div>
+            </div>
+
+        </div>
+
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+
+        <footer th:replace="plantillas/template ::footer"></footer>
+    </body>
+</html>

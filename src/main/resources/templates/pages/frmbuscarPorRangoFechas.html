@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="plantillas/template :: head">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+
+        <header th:replace="plantillas/template :: header"> </header>
+        <div class="container">
+            <div class="card">
+                <div class="card-header">
+                    <form th:action="@{/asegurados/rango}" 
+                          th:object="${asegurado}" method="post">
+                        <div class="row">
+                            <div class="col">Fecha desde:</div>
+                            <div class="col">
+                                <input type="text" 
+                                       name="txtdesde"
+                                       id="txtdesde"
+                                       placeholder="YYYY/MM/DD" required 
+                                       title="Enter a date in this format YYYY/MM/DD"/>
+
+                            </div>
+                            <div class="col">Fecha hasta:</div>
+                            <div class="col">
+                                <input type="text" 
+                                       name="txthasta"
+                                       id="txthasta"
+                                       placeholder="YYYY/MM/DD" required 
+                                       title="Enter a date in this format YYYY/MM/DD"/>
+
+
+                            </div>
+                            <div class="col">
+                                <input type="submit" class="btn btn-primary btn-sm" value="Buscar" />
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nombres</th>
+                                    <th scope="col">Apellidos</th>
+                                    <th scope="col">Telefonos</th>
+                                    <th scope="col">Correo</th>
+                                    <th scope="col">Fec. Ingreso</th>
+
+                                    <th scope="col">Sucursal</th> 
+                                    <th scope="col">Acción</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="aseg:${asegurados}">
+                                    <th scope="row" th:text="${aseg.id}" />
+                                    <td th:text="${aseg.nombres}" />
+                                    <td th:text="${aseg.apellidos}" />
+                                    <td th:text="${aseg.telefono}" />
+                                    <td th:text="${aseg.email}" />
+                                    <td th:text="${#dates.format(aseg.fec_ingreso, 'dd-MM-yyyy')}" />
+                                    <td th:text="${aseg.suc.descripcion}" />
+                                    <!-- <td th:text="${cl.ciudades.ciudad}" /> -->
+                                    <td>
+                                        <a class="btn btn-success btn-sm" th:href="@{/asegurados/edit/} + ${aseg.id}"
+                                           th:text="'Editar'" title="Editar Registro">
+                                        </a>
+                                        <a class="btn btn-danger btn-sm" th:href="@{/asegurados/delete/} + ${aseg.id}"
+                                           th:text="'Eliminar'" title="Eliminar Registro"
+                                           onclick="return confirm('Esta seguro de eliminar el registro?');">
+                                        </a>
+
+                                    </td>	
+                                </tr>
+                            </tbody>
+                        </table>
+
+                </div>
+
+                </form>
+            </div>
+
+        </div>
+        <footer th:replace="plantillas/template ::footer"></footer>
+    </body>
+</html>

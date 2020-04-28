@@ -1,0 +1,8 @@
+git@github.com:arfloreshn/sprintboot2_api_rest.git
+
+echo "# sprintboot2_api_rest" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:arfloreshn/sprintboot2_api_rest.git
+git push -u origin master
