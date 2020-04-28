@@ -14,25 +14,25 @@
 
 # TABLA DE REGISTROS
 <p>
-  <img src="https://github.com/arfloreshn/sprintboot2_api_rest/blob/master/src/foto1.jpg" width="100%" height="500" title="Abm de mantenimiento">
+  <img src="https://github.com/arfloreshn/sprintboot2_api_rest/tree/master/srcfoto1.jpg" width="100%" height="500" title="Abm de mantenimiento">
 </p>
 
 # APERTURA DE NUEVOS REGISTROS
 <p>
-  <img src="https://github.com/arfloreshn/sprintboot2_api_rest/blob/master/src/foto2.jpg" width="100%" height="500" title="Abm de mantenimiento">
+  <img src="https://github.com/arfloreshn/sprintboot2_api_rest/tree/master/srcfoto2.jpg" width="100%" height="500" title="Abm de mantenimiento">
 </p>
 
 # ACTUALIZACION DE REGISTROS
 <p>
-  <img src="https://github.com/arfloreshn/sprintboot2_api_rest/blob/master/src/foto3.jpg" width="100%" height="500" title="Abm de mantenimiento">
+  <img src="https://github.com/arfloreshn/sprintboot2_api_rest/tree/master/srcfoto3.jpg" width="100%" height="500" title="Abm de mantenimiento">
 </p>
 
 # BORRAR REGISTROS
 <p>
-  <img src="https://github.com/arfloreshn/sprintboot2_api_rest/blob/master/src/foto4.jpg" width="100%" height="500" title="Abm de mantenimiento">
+  <img src="https://github.com/arfloreshn/sprintboot2_api_rest/tree/master/srcfoto4.jpg" width="100%" height="500" title="Abm de mantenimiento">
 </p>
 
 # BUSQUEDA POR RANGO DE FECHAS
 <p>
-  <img src="https://github.com/arfloreshn/sprintboot2_api_rest/blob/master/src/foto5.jpg" width="100%" height="500" title="Abm de mantenimiento">
+  <img src="https://github.com/arfloreshn/sprintboot2_api_rest/tree/master/srcfoto5.jpg" width="100%" height="500" title="Abm de mantenimiento">
 </p>
